@@ -1,0 +1,13 @@
+function countdown(startingNumber) {
+  function displayCount(currentNumber) {
+    console.log(currentNumber);
+    currentNumber--;
+    if (currentNumber >= 0) {
+      setTimeout(function() {
+        displayCount(currentNumber);
+      }, 1000);
+    }
+  }
+  displayCount(startingNumber);
+}
+countdown(5);

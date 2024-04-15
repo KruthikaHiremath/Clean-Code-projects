@@ -1,0 +1,15 @@
+function countVowels(str) {
+  let vowelsCount = 0;
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+  for (let index in str) {
+    const char = str[index].toLowerCase();
+    if (vowels.includes(char)) {
+      vowelsCount++;
+    }
+  }
+
+  return vowelsCount;
+}
+const str = "kruthika";
+const vowelsCount = countVowels(str);
+console.log(str, ":", vowelsCount);

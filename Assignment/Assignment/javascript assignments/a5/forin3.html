@@ -1,0 +1,23 @@
+function calculateAverage(grades) {
+    let total = 0;
+    let count = 0;
+    for (let subject in grades) {
+        if (grades.hasOwnProperty(subject)) {
+            total += grades[subject];
+            count++;
+        }
+    }
+    if (count === 0) {
+        return 0;
+    }
+    return total / count;
+}
+let studentGrades = {
+    math: 90,
+    science: 85,
+    history: 88,
+    english: 92
+};
+let average = calculateAverage(studentGrades);
+console.log(studentGrades);
+console.log(average);

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+</head>
+<style>
+    * {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: white;
+  background-color: black;
+}
+
+.container {
+  max-width: 90rem;
+  margin: 2rem auto;
+  padding: 0px 2rem;
+}
+
+.img-fluid {
+  max-width: 100%;
+}
+.logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 41px;
+  outline: 4px solid red;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 3rem;
+  align-items: center;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.items a:link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.items a:hover {
+  color: red;
+}
+
+.active {
+  color: red !important;
+}
+
+button {
+  font-size: 2rem;
+  padding: 0.6rem 1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to right, #c31432, #892211);
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background: white;
+  outline: 1px solid red;
+  color: red;
+  border: none;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+.short-info {
+  color: red;
+  font-size: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.hero-heading {
+  font-size: 3rem;
+  margin-bottom: 0.3rem;
+}
+.hero-sub-heading {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.users {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0px;
+}
+.user {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid red;
+}
+.learn-more {
+  align-self: start;
+  margin-top: 2rem;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 800px) {
+	display:grid; 
+}
+</style>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#">Home</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Info</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <button class="btn btn-outline-success" type="submit">LogIn</button>
+        </form>
+  </nav>
+  <br><br>
+ <div class="container" style="display: flex;">
+ 	<div class="card1">
+	<h6 style="color: red">#Get Your 15 days Free Trail</h6><br>
+	<p style="color: white;font-size: 40px;">Manage All Of Your <br>Stuff Using A TGB</p><br>
+	<p style="color: white;font-size: 18px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</br> when an unknown printer took a galley of type and scrambled make a type specimen book.</br></p><br><br>
+<br><br><br>
+ <button style="margin-left:20px;">Learn More</button>	
+</div>
+ 	<div class="card2">
+    <img src="images.jpg" style="height: 50%;width: 150%; margin-right: 20px;margin-left: 40px;"> 
+    </div><br><br>
+ </div>
+</div>
+</body>
+</html>

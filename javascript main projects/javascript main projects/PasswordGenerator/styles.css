@@ -1,0 +1,14 @@
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+  margin-top:90px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+#password {
+    text-align: center;
+}

@@ -1,0 +1,90 @@
+*{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'popins','sans-serif';
+   }
+
+body{
+           display:flex;
+           align:items:center;
+           justify-content:center;
+           min-height:90vh;
+           background-image:linear-gradient(to right, #2193b0,
+           #6dd5ed);
+        }
+
+.wrapper{
+                 margin:40px;
+                 width:400px;
+                 background:#fff;
+                 border-radius:12px;
+                 padding:18px 25px 20px;
+                 box-shadow:0 0 30px rgba(0,0,0,0.6);
+              }
+
+.wrapper:where(.title,li,li,i, .details){
+                                                           display:flex;
+                                                           algin:items:center;
+                                                        }
+.title img{
+                  max-width:21px;
+                }
+
+.title h2{
+                font-size:25px;
+                 text-align:center;
+                font-weight:600px;
+
+             }
+
+.wrapper .content{
+                                 margin:10px 0;
+                              }
+.content p{
+                    font-size:18px;
+                 }
+.content ul{
+                    display:flex;
+                    flex-wrap:wrap;
+                    padding:7px;
+                   margin:12px 0;
+                   border-radius:5px;
+                   border:1px solid #a6a6a6;
+                }
+.content ul li{
+                       color:#B33;
+                       margin:4px 3px;
+                       list-style:none;
+                       border-radius:5px;
+                       background:#F2F2F2;
+                       padding:5px 8px 5px 10px;
+                       border:1px solid #e3e1e1;
+                    }
+.content ul input{
+                               flex:1;
+                               padding:5px;
+                               border:none;
+                               outline:none;
+                               font-size:16px;
+                          }
+
+.wrapper .details{
+                             justify-content:space-between;
+                          }
+
+.details buttons{
+                            border:none;
+                            outline:none;
+                            color:#fff;
+                            font-size:14px;
+                            cursor:pointer;
+                            padding:9px 15px;
+                            border-radius:5px;
+                            background:#2193b0;
+                            transition:background 0.3s ease;
+                         }
+
+.deatils button:hover{
+                                    background:#00BCD4;
+                                 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Guess My Number</title>
+<link href="style1.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="content">
+    <h1>Guess My Number</h1><br>
+    <p id="message">Guess a number between 1 and 100</p><br>
+    <input type="number" id="guessField"><br><br>
+    <button onclick="checkGuess()">Submit Guess</button>
+</div>
+    <script>
+let secretNumber = Math.floor(Math.random() * 100) + 1;
+let attempts = 0;
+
+function checkGuess() {
+    let userGuess = parseInt(document.getElementById("guessField").value);
+    if (userGuess === secretNumber) {
+        document.getElementById("message").innerHTML = `Congratulations! You guessed the correct number in ${attempts} attempts.`;
+    } else if (userGuess < secretNumber) {
+        attempts++;
+        document.getElementById("message").innerHTML = "Too low! Guess again.";
+    } else {
+        attempts++;
+        document.getElementById("message").innerHTML = "Too high! Guess again.";
+    }
+}
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+function evaluateTemperature(temperatureCelsius) {
+    if (temperatureCelsius > 30) {
+        console.log("It's a hot day!");
+    } else if (temperatureCelsius >= 20 && temperatureCelsius <= 30) {
+        console.log("The weather is pleasant.");
+    } else {
+        console.log("It's a bit chilly.");
+    }}
+
+evaluateTemperature(35);  // Output: It's a hot day!
+evaluateTemperature(25);  // Output: The weather is pleasant.
+evaluateTemperature(15);  // Output: It's a bit chilly.

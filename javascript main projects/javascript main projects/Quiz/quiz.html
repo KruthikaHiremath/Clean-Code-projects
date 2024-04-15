@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="quiz-container">
+            <h2 id="question">Question goes here</h2>
+            <div id="options" class="options-container"></div>
+            <button id="submit-btn" class="btn">Submit Answer</button>
+        </div>
+        <div id="result-container" class="result-container" style="display: none;">
+            <h2>Your Score</h2>
+            <p id="score">Score goes here</p>
+        </div>
+    </div>
+
+    <script>
+const questions = [
+    {
+        question: "What is 2 + 2?",
+        options: ["3", "4", "5", "6"],
+        correctAnswer: "4"
+    },
+    {
+        question: "What is the capital of France?",
+        options: ["Paris", "London", "Berlin", "Madrid"],
+        correctAnswer: "Paris"
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
+const submitButton = document.getElementById("submit-btn");
+const resultContainer = document.getElementById("result-container");
+const scoreElement = document.getElementById("score");
+
+function loadQuestion() {
+    const currentQuiz = questions[currentQuestion];
+    questionElement.textContent = currentQuiz.question;
+    optionsElement.innerHTML = "";
+
+    currentQuiz.options.forEach(option => {
+        const optionButton = document.createElement("button");
+        optionButton.textContent = option;
+        optionButton.classList.add("option-btn");
+        optionButton.addEventListener("click", () => selectAnswer(option));
+        optionsElement.appendChild(optionButton);
+    });
+}
+
+function selectAnswer(selectedOption) 
+{
+    const currentQuiz = questions[currentQuestion];
+    if (selectedOption === currentQuiz.correctAnswer) 
+     {
+         score++;
+     }
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+        loadQuestion();
+    } else {
+        showResult();
+    }
+}
+
+function showResult() {
+    questionElement.style.display = "none";
+    optionsElement.style.display = "none";
+    submitButton.style.display = "none";
+
+    scoreElement.textContent = `${score} / ${questions.length}`;
+    resultContainer.style.display = "block";
+}
+
+loadQuestion();
+
+</script>
+</body>
+</html>

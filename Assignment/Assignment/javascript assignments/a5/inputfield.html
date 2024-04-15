@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="textInput">
+<p id="displayText"></p>
+
+<script>
+  const inputField = document.getElementById("textInput");
+  const displayText = document.getElementById("displayText");
+  inputField.addEventListener("input", function() {
+    displayText.textContent = inputField.value;
+  });
+</script>
+
+</body>
+</html>

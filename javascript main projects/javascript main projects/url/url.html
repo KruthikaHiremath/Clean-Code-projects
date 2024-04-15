@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top:90px;
+}
+
+h1 {
+  text-align: center;
+  color: #007bff;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.btn-primary {
+  border-radius: 0;
+}
+
+#shortenedUrlContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#shortenedUrl {
+  color: #007bff;
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-5">URL Shortener</h1>
+    <div class="mt-3">
+      <input type="text" id="longUrlInput" class="form-control mb-3" placeholder="Enter Long URL">
+      <button onclick="shortenUrl()" class="btn btn-primary">Shorten URL</button>
+    </div>
+    <div id="shortenedUrlContainer" class="mt-3" style="display: none;">
+      <p>Your shortened URL:</p>
+      <a id="shortenedUrl" href="#" target="_blank"></a>
+    </div>
+  </div>
+
+  <script>
+    function shortenUrl() {
+      var longUrl = document.getElementById('longUrlInput').value;
+      var shortenedUrl = 'https://example.com/shortened'; 
+      displayShortenedUrl(shortenedUrl);
+    }
+
+    function displayShortenedUrl(shortenedUrl) {
+      var container = document.getElementById('shortenedUrlContainer');
+      var link = document.getElementById('shortenedUrl');
+      link.href = shortenedUrl;
+      link.textContent = shortenedUrl;
+      container.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

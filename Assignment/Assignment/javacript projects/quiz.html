@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Quiz App Master</title>
+</head>
+<style>
+body {
+background-color:#D4E7C5;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-top: 50px;
+}
+#quizContainer {
+ background-color:#E1F0DA;
+  max-width: 600px;
+  margin: 0 auto;
+  height:350px;
+ align-items:center;
+ padding-top:130px;
+}
+#answerButtons button {
+  margin: 10px;
+}
+</style>
+<body>
+
+  <div id="quizContainer">
+    <h2 id="question">Question goes here</h2>
+    <div id="answerButtons">
+      <button id="btn1">Option 1</button>
+      <button id="btn2">Option 2</button>
+      <button id="btn3">Option 3</button>
+      <button id="btn4">Option 4</button>
+    </div>
+<div id="result"></div>
+</div>
+    <div id="result"></div>
+</div>
+ 
+
+  <script>
+const questions = [
+  {
+    question: "What is the capital of France?",
+    answers: [
+      { text: "London", correct: false },
+      { text: "Paris", correct: true },
+      { text: "Berlin", correct: false },
+      { text: "Madrid", correct: false }
+    ]
+  },
+  {
+    question: "What is 2 + 2?",
+    answers: [
+      { text: "4", correct: true },
+      { text: "5", correct: false },
+      { text: "3", correct: false },
+      { text: "6", correct: false }
+    ]
+  }
+];
+
+let currentQuestionIndex = 0;
+
+function showQuestion() {
+  const question = questions[currentQuestionIndex];
+  document.getElementById('question').innerText = question.question;
+  document.getElementById('btn1').innerText = question.answers[0].text;
+  document.getElementById('btn2').innerText = question.answers[1].text;
+  document.getElementById('btn3').innerText = question.answers[2].text;
+  document.getElementById('btn4').innerText = question.answers[3].text;
+
+}
+
+document.getElementById('btn1').addEventListener('click', checkAnswer);
+document.getElementById('btn2').addEventListener('click', checkAnswer);
+document.getElementById('btn3').addEventListener('click', checkAnswer);
+document.getElementById('btn4').addEventListener('click', checkAnswer);
+
+function checkAnswer(e) {
+  const selectedAnswer = e.target.innerText;
+  const question = questions[currentQuestionIndex];
+
+  if (question.answers.find(answer => answer.text === selectedAnswer && answer.correct)) {
+    document.getElementById('result').innerText = "Correct!";
+  } else {
+    document.getElementById('result').innerText = "Incorrect!";
+  }
+
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    document.getElementById('quizContainer').innerHTML = "<h2>Quiz Complete</h2>";
+  }
+}
+
+showQuestion();
+
+
+</script>
+</body>
+
+</html>

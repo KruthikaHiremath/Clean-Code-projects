@@ -1,0 +1,26 @@
+function printGrade(letterGrade) {
+    switch (letterGrade) {
+        case "A":
+            console.log("Excellent");
+            break;
+        case "B":
+            console.log("Well done!");
+            break;
+        case "C":
+            console.log("Good job!");
+            break;
+        case "D":
+            console.log("Let's work on it.");
+            break;
+        case "F":
+            console.log("Unfortunately");
+            break;
+        default:
+            console.log("Invalid letter grade");
+    }
+}
+
+printGrade("A");  // Output: Excellent! 
+printGrade("C");  // Output: Good job!
+printGrade("F");  // Output: Unfortunately
+printGrade("X");  // Output: Invalid letter grade

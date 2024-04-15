@@ -1,0 +1,33 @@
+function getMonthDays(monthName) {
+    let days;
+
+    switch (monthName) {
+        case "January":
+        case "March":
+        case "May":
+        case "July":
+        case "August":
+        case "October":
+        case "December":
+            days = 31;
+            break;
+        case "April":
+        case "June":
+        case "September":
+        case "November":
+            days = 30;
+            break;
+        case "February":
+            days = "28 or 29";
+            break;
+        default:
+            days = "Invalid month name";
+    }
+
+    return days;
+}
+
+console.log("January has " + getMonthDays("January") + " days.");
+console.log("April has " + getMonthDays("April") + " days.");
+console.log("February has " + getMonthDays("February") + " days.");
+console.log("InvalidMonth has " + getMonthDays("InvalidMonth") + " days.");

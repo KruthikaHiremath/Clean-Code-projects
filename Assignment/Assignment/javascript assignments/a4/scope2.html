@@ -1,0 +1,11 @@
+: Identify the scope of the variable z in the code snippet below:
+let z = 'global';
+function anotherFunction() {
+let z = 'local';
+console.log(z);
+}anotherFunction();
+console.log(z);
+
+
+//OUTPUT:local gobal
+z is gobal scope.

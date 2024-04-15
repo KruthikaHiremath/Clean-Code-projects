@@ -1,0 +1,96 @@
+
+1): Implement a &quot;Create&quot; operation in MongoDB using the
+insertOne method to add a new document to a collection:
+=>db.employees.insertMany([
+  {empId: 1, name: 'Clark', dept: 'Sales' },
+  
+     {empId: 2, name: 'Dave', dept: 'Accounting' },
+
+    {empId: 3, name: 'Ava', dept: 'Sales' }
+]);
+
+
+    db.employees.find({dept: 'Sales'});
+
+output:Output:
+
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("65ded834a6e5937c1fec648a"),
+		ObjectId("65ded834a6e5937c1fec648b"),
+		ObjectId("65ded834a6e5937c1fec648c")
+	]
+}
+{ "_id" : ObjectId("65ded834a6e5937c1fec648a"), "empId" : 1, "name" : "Clark", "dept" : "Sales" }
+{ "_id" : ObjectId("65ded834a6e5937c1fec648c"), "empId" : 3, "name" : "Ava", "dept" : "Sales" }
+
+
+
+2): Implement a &quot;Read&quot; operation in MongoDB using the find
+method to retrieve all documents from a collection.
+=>
+db.employees.insertMany([
+  {empId: 1, name: 'Clark', dept: 'Sales' },
+ 
+ {empId: 2, name: 'Dave', dept: 'Accounting' },
+ 
+ {empId: 3, name: 'Ava', dept: 'Sales' },
+ 
+ {empId: 4, name: 'Dia', dept:'Accounting'}
+]);
+
+
+  db.employees.findOne({dept: 'Sales'});
+
+ db.employees.find({dept:'Accounting'});
+
+
+Output:
+
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("65dedbdeb0fc63b980ca5c23"),
+		ObjectId("65dedbdeb0fc63b980ca5c24"),
+		ObjectId("65dedbdeb0fc63b980ca5c25"),
+		ObjectId("65dedbdeb0fc63b980ca5c26")
+	]
+}
+{
+	"_id" : ObjectId("65dedbdeb0fc63b980ca5c23"),
+	"empId" : 1,
+	"name" : "Clark",
+	"dept" : "Sales"
+}
+{ "_id" : ObjectId("65dedbdeb0fc63b980ca5c24"), "empId" : 2, "name" : "Dave", "dept" : "Accounting" }
+{ "_id" : ObjectId("65dedbdeb0fc63b980ca5c26"), "empId" : 4, "name" : "Dia", "dept" : "Accounting" }
+
+3)Implement an &quot;Update&quot; operation in MongoDB using the
+updateOne method to modify an existing document in a collection.
+=>
+db.employees.update(   
+  {empId: 3 },
+  { $set: { region: "Asia" } }
+);
+
+db.employees.updateMany(   
+  { dept: 'Sales'},
+  { $set: { region: "US" } }
+);
+
+Output:
+
+{ "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }
+
+4): Implement the &quot;Delete&quot; operation in MongoDB to remove a
+specific document from a collection.
+=>db.employees.deleteOne({ empId: 1})
+
+   db.employees.deleteMany({ dept: 'Sales'})
+
+Output:
+
+{ "acknowledged" : true, "deletedCount" : 0 }
+{ "acknowledged" : true, "deletedCount" : 0 }
+

@@ -1,0 +1,16 @@
+function filterEvenNumbers(numbersArray) {
+  const evenNumbers = [];
+
+  for (let number of numbersArray) {
+    if (number % 2 === 0) {
+      evenNumbers.push(number);
+    }
+  }
+
+  return evenNumbers;
+}
+let myArray = [1, 2, 36, 4, 5, 6, 7, 8, 9, 10,22,66];
+let evenNumbersArray = filterEvenNumbers(myArray);
+
+console.log(myArray);
+console.log("Even Numbers Array:", evenNumbersArray);

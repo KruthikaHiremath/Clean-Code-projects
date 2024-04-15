@@ -1,0 +1,30 @@
+let password = "vinaysyuuii"
+function passchecker() {
+  let numbers = "1234567890"
+  let alphabets = "abcdefghijklmnopqrstuvwxyz"
+  if (password.length < 8) {
+    console.log("Weakpassword")
+  }
+  else {
+    let numcount = 0
+    let charcount = 0
+    for (let i = 0; i <= password.length - 1; i++) {
+      for (let j = 0; j <= numbers.length - 1; j++) {
+        if (numbers[j] == password[i]) {
+          numcount++
+        }
+      }
+      for (let k = 0; k <= alphabets.length - 1; k++) {
+        if (alphabets[k] == password[i]) {
+          charcount++
+        }
+      }
+    }
+   if(numcount>0&&charcount>0){
+     console.log("Strong password")
+   }else{
+     console.log("moderate")
+   }
+  }
+}
+  passchecker()

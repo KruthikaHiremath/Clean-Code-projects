@@ -1,0 +1,13 @@
+function filterPositiveNumbers(arr) {
+  const positiveNumbers = [];
+  arr.forEach((element) => {
+    if (element > 0) {
+      positiveNumbers.push(element);
+    }
+  });
+  return positiveNumbers;
+}
+let myArray = [-2, 5, 0, -7, 3, 10];
+let resultArray = filterPositiveNumbers(myArray);
+console.log("Array:", myArray);
+console.log("Positive Numbers Array:", resultArray);

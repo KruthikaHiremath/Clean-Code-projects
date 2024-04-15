@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<img id="hoverImage" src="imagess.jpg" >
+<script>
+  const image = document.getElementById("hoverImage");
+  const mainSrc = image.src;
+  const newSrc = "imagesss.jpg";
+  image.addEventListener("mouseenter", function() {
+    image.src = newSrc;
+  });
+  image.addEventListener("mouseleave", function() {
+    image.src = mainlSrc;
+  });
+</script>
+
+</body>
+</html>

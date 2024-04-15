@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Roman Numeral Converter</title>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-top: 50px;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+</style>
+</head>
+
+<body>
+  <h1>Roman Numeral Converter</h1>
+  <input type="number" id="decimalNumber" placeholder="Enter a decimal number">
+  <button onclick="convertToRoman()">Convert</button>
+  <p id="romanNumeral"></p>
+  <script>
+  function convertToRoman() {
+  var decimalNumber = document.getElementById("decimalNumber").value;
+  var romanNumeral = '';
+  var romanNumerals = {
+    1000: "M",
+    900: "CM",
+    500: "D",
+    400: "CD",
+    100: "C",
+    90: "XC",
+    50: "L",
+    40: "XL",
+    10: "X",
+    9: "IX",
+    5: "V",
+    4: "IV",
+    1: "I"
+  };
+  for (var key in romanNumerals) {
+    while (decimalNumber >= key) {
+      romanNumeral += romanNumerals[key];
+      decimalNumber -= key;
+    }
+  }
+  document.getElementById("romanNumeral").innerText = romanNumeral;
+}
+
+</script>
+</body>
+
+</html>

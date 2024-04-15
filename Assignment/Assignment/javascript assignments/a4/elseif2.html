@@ -1,0 +1,16 @@
+function checkTimeOfDay(currentHour) {
+    if (currentHour >= 5 && currentHour < 12) {
+        console.log("Good morning.");
+    } else if (currentHour >= 12 && currentHour < 17) {
+        console.log("Good afternoon.");
+    } else if (currentHour >= 17 && currentHour < 21) {
+        console.log("Good evening.");
+    } else {
+        console.log("Good night.");
+    }
+}
+
+checkTimeOfDay(8);   // Output: Good morning.
+checkTimeOfDay(14);  // Output: Good afternoon.
+checkTimeOfDay(19);  // Output: Good evening.
+checkTimeOfDay(23);  // Output: Good night.

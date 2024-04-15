@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #D2D180;
+      margin-top: 50px;
+    }
+    .container {
+      background-color:#EADFB4;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .calculator-screen {
+      background-color: #eee;
+      border: 1px solid #ccc;
+      text-align: right;
+      font-size: 2rem;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .btn {
+      font-size: 1.5rem;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center mb-4">Scientific Calculator</h1>
+    <div class="calculator-screen" id="output">0</div>
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="clearOutput()">C</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('**')">^</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('%')">%</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('/')">/</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('7')">7</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('8')">8</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('9')">9</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('*')">x</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('4')">4</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('5')">5</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('6')">6</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('-')">-</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('1')">1</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('2')">2</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('3')">3</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('+')">+</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('Math.sqrt(')">v</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('Math.sin(')">sin</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('Math.cos(')">cos</button>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('Math.tan(')">tan</button>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('(')">(</button>
+      </div>
+      <div class="col-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput(')')">)</button>
+      </div>
+      <div class="col-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="appendOutput('Math.PI')">p</button>
+      </div>
+      <div class="col-6 col-md-3">
+        <button class="btn btn-secondary btn-block" onclick="calculateResult()">=</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function appendOutput(value) {
+      var output = document.getElementById('output');
+      if (output.textContent === '0') {
+        output.textContent = '';
+      }
+      output.textContent += value;
+    }
+
+    function clearOutput() {
+      document.getElementById('output').textContent = '0';
+    }
+
+    function calculateResult() {
+      var expression = document.getElementById('output').textContent;
+      try {
+        var result = eval(expression);
+        document.getElementById('output').textContent = result;
+      } catch (error) {
+        document.getElementById('output').textContent = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>

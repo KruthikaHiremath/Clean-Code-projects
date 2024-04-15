@@ -1,0 +1,12 @@
+function checkAge(age) {
+    if (age < 18) {
+        console.log("You are a minor.");
+    } else if (age >= 18 && age <= 64) {
+        console.log("You are an adult.");
+    } else {
+        console.log("You are a senior citizen.");
+    }
+}
+checkAge(15);  // Output: You are a minor.
+checkAge(25);  // Output: You are an adult.
+checkAge(70);  // Output: You are a senior citizen.

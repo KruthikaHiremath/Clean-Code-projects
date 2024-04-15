@@ -1,0 +1,15 @@
+let bank = {
+  name: "kotak",
+  accaccount: 67890900,
+  acholdername: "pinky",
+  balance: 30000,
+  withdraw:function(amt){
+    this.balance=this.balance - amt;
+    console.log(this.balance);
+  },
+  deposit:function(amt){
+    this.balance=this.balance + amt;
+  },
+}
+bank.deposit(20000);
+console.log(bank);
